@@ -19,7 +19,7 @@ Write a program that will take a grid and calculate how many groups of zombies t
 ## Second
 
 Write a sudoku solver that can solve following sudokus:
-
+```
 easy:
 070630094
 104000200
@@ -52,5 +52,6 @@ challenge:
 500000073
 002010000
 000040009
+```
 
 ## Third
