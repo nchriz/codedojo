@@ -25,7 +25,7 @@ public class EmbeddedPostgresConfiguration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmbeddedPostgresConfiguration.class);
 
-    private static final String DB_NAME = "payments";
+    private static final String DB_NAME = "codedojo";
 
     private static final String DB_ADMIN_USERNAME = "postgres";
 

@@ -2,7 +2,7 @@ spring:
   application:
     name: three
   datasource:
-    url: jdbc:postgresql://localhost:5444/payments
+    url: jdbc:postgresql://localhost:5444/codedojo
     username: postgres
     password: postgres
     platform: postgresql
