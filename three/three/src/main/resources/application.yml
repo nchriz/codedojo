@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: three
+  datasource:
+    url: jdbc:postgresql://localhost:5444/payments
+    username: postgres
+    password: postgres
+    platform: postgresql
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 20
+      connection-test-query: SELECT 1
+  jpa.database-platform:  org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+    enabled: true
+    default-schema: three
+  jpa:
+    show-sql: false
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
