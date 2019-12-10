@@ -36,7 +36,7 @@ int main(int argn, char** argv) {
   std::vector<binRange> v;
   int max = atoi(argv[1]), jump = 1000;;
   for (int i = 0; i < max; ++i) {
-    v.push_back(binRange(i*jump, (i+1)*jump));
+    v.push_back(binRange(i*jump, (i+1)*jump - 1));
   }
   //printVector(v);
   std::random_shuffle(v.begin(), v.end(), myRandom);
