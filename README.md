@@ -55,3 +55,53 @@ challenge:
 ```
 
 ## Third
+
+Having a large set of data, represented in range.csv, find a solution to retrieve a specific row.
+To get a row, give it a integer and the server will find the range that hold the integer and response with that row.
+
+Example
+```
+DATASET:
+570000000,570000999
+946570000,946570999
+766899000,766899999
+347957000,347957999
+59958000,59958999
+
+REQUEST 347957123
+RESPONSE 347957000,347957999
+```
+
+## Fourth
+
+Christmas Special: Reindeer race. Client register reindeers with the Server which control the race.
+
+Endpoints of the Server
+```
+@RequestMapping(method = RequestMethod.POST, value = "/{id}/drawMap/{map}")
+public ResponseEntity drawMap(@PathVariable(value = "id") UUID id, @PathVariable(value = "map") String map);
+
+@RequestMapping(method = RequestMethod.POST, value = "/{id}/clear")
+public ResponseEntity clearMap(@PathVariable(value = "id") UUID id);
+
+@RequestMapping(method = RequestMethod.POST, value = "/{id}/startRace")
+public ResponseEntity startRace(@PathVariable(value = "id") UUID id);
+
+@RequestMapping(method = RequestMethod.POST, value = "/createBlindeer/{color}")
+public ResponseEntity<CreateDeerDto> createBlindeer(@PathVariable(value = "color") String color);
+
+@RequestMapping(method = RequestMethod.POST, value = "/{id}/move/{move}")
+public ResponseEntity<MovedDeerDto> moveRaindeer(@PathVariable(value = "id") UUID id, @PathVariable(value = "move") Move move);
+
+```
+id for the server is: 0ef506e8-5f6b-45ed-a81a-53eab6d7eb6b
+
+Flow:
+1. Start the Server - Server side
+2. Draw Map [1,3] - Server side
+3. Register Reindeer - Client side
+4. Start Race - Server side
+5. Move Reindeer - Client side
+
+The response from 3 will be the UUID that identify the reindeer.
+Response from 5 will be 200 with either Success or Fail (if movement worked) and new coordinates.
